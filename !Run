@@ -1,0 +1,28 @@
+Set Dummy$Path <Obey$Dir>.Resources.
+Run Dummy:ResFind Text2HTML
+Unset Dummy$Path
+|
+Set Text2HTML$Help <Text2HTML$Dir>.!Help
+Set Text2HTML$Version "1.06"
+Set Text2HTML$Web "http://www.arcsite.de/hp/bracke/programming/mtools.html"
+Set Text2HTML$Title "Text2HTML"
+Set Text2HTML$Publisher "Bent Bracke"
+Set Text2HTML$Description "Converts text files to HTML."
+|
+Set Text2HTML$ro4 1
+RMEnsure UtilityModule 4.00 Set Text2HTML$ro4 0
+If <Text2HTML$ro4>=1 Then IconSprites <Text2HTML$Dir>.!Sprites4 Else IconSprites <Text2HTML$Dir>.!Sprites
+Unset Text2HTML$ro4
+If "<System$Path>" = "" Then Error 0 System resources cannot be found
+WimpSlot -Min 128k -Max 128k
+
+RMEnsure SharedCLibrary 0 System:modules.clib
+RMEnsure SharedCLibrary 3.75 Error You need Clib 3.75 to run !Text2HTML
+RMEnsure FrontEnd 0 System:modules.frontend
+RMEnsure Frontend 1.13 Error You need version 1.13 of the FrontEnd module to run !Text2HTML
+RMEnsure TaskWindow 0 System:modules.task
+RMEnsure TaskWindow 0.29 Error You need version 0.29 of the taskwindow module to run !Text2HTML
+RMEnsure DDEUtils 0 System:modules.ddeutils
+RMEnsure DDEUtils 1.50 Error You need version 1.50 of the DDEUtils module to run !Text2HTML
+WimpSlot -Min 64k -Max 64k
+FrontEnd_Start -app Text2HTML -desc <Text2HTML$Dir>.desc

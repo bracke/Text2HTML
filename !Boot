@@ -1,0 +1,15 @@
+Set Dummy$Path <Obey$Dir>.Resources.
+Run Dummy:ResFind Text2HTML
+Unset Dummy$Path
+|
+Set Text2HTML$Help <Text2HTML$Dir>.!Help
+Set Text2HTML$Version "1.06"
+Set Text2HTML$Web "http://www.arcsite.de/hp/bracke/programming/mtools.html"
+Set Text2HTML$Title "Text2HTML"
+Set Text2HTML$Publisher "Bent Bracke"
+Set Text2HTML$Description "Converts text files to HTML."
+|
+Set Text2HTML$ro4 1
+RMEnsure UtilityModule 4.00 Set Text2HTML$ro4 0
+If <Text2HTML$ro4>=1 Then IconSprites <Text2HTML$Dir>.!Sprites4 Else IconSprites <Text2HTML$Dir>.!Sprites
+Unset Text2HTML$ro4

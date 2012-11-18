@@ -2,7 +2,7 @@
 Text2HTML is a command line program which converts text files to HTML.
 It is supplied with a desktop frontend, but is also useable on its own.
 
-NOTE: This is a RISC OS app.
+NOTE: This is a RISC OS app and will not run on other platforms.
 
 ## Frontend use
 1. Double click on the !Text2HTML icon - this will place an icon on the iconbar.
